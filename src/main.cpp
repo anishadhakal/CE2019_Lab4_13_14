@@ -17,4 +17,12 @@ int main(){
 
 
     g.display();
+
+     int i, b, a;
+   std::cout<<"Random graph generation: ";
+   a= 7 + rand()%6;
+   std::cout<<"\nThe graph has "<<a<<" vertices";
+   b = rand()%((a*(a-1))/2);
+   std::cout<<"\nand has "<<b<<" edges.";
+   g.randomGraph(b, a);
 }

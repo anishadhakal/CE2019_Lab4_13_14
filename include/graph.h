@@ -20,6 +20,7 @@ public:
     bool neighbour(int vertex1, int vertex2);
     void display();
     ~Graph();
+    void randomGraph(int noofEdge, int noofVertex);
 
 
 private:
