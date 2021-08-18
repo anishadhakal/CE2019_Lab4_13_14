@@ -1,14 +1,19 @@
 class Graph{
 public:
-    
+
     Graph(int MAX);
     Graph(){
-        isDiagraph = false;
+        this->isDiagraph = false;
+        for (int i = 0; i < MAX; i++){
+            for (int j = 0; j < MAX; j++){
+                adjMatrix[i][j] = 0;
+            }
+        }
     }
     bool isEmpty();
     bool isDirected();
     void addVertex(int vertex);
-    void addEdge(int vertex1, int vertex2, int weight);
+    void addEdge(int vertex1, int vertex2);
     void removeVertex(int removeVertex);
     void removeEdge(int vertex1, int vertex2);
     int numVertices();
@@ -16,18 +21,18 @@ public:
     int inDegree(int vertex);
     int outDegree(int vertex);
     int degree(int vertex);
-    int neighbours(int getVertex);
+    void neighbours(int getVertex);
     bool neighbour(int vertex1, int vertex2);
     void display();
-    ~Graph();
     void randomGraph(int noofEdge, int noofVertex);
+    ~Graph();
 
 
 private:
     int vertices[20];
     int adjMatrix[20][20];
-    int endVertex = 0;
+    int numVertex = 0;
     int MAX = 100;
     bool isDiagraph;
-    int numEdge;
+    bool checkVertex(int &index, int vertex);
 };
